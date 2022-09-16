@@ -21,22 +21,30 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function AlignItemsList() {
   return (
     <>
-      <Box sx={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          marginBottom: "15px",
+          marginTop: "10px",
+        }}
+      >
         <Typography
           variant="h5"
           gutterBottom
           sx={{
-            fontWeight: "500",
+            fontWeight: 500,
             color: "#203758",
             margin: "0px 0px 0px 0px",
             display: "flex",
-            //flexGrow: 1,
+
+            fontFamily: "Montserrat",
           }}
         >
           Online Contacts
         </Typography>
         <Box sx={{ ml: 1, flexGrow: "1" }}>
-          <FiberManualRecordIcon color="success" />
+          <FiberManualRecordIcon color="success" fontSize="small" />
         </Box>
         <Box
           sx={{
@@ -46,65 +54,121 @@ export default function AlignItemsList() {
             alignSelf: "center",
           }}
         >
-          <MoreHorizIcon />
+          <MoreHorizIcon sx={{ color: "#788292" }} />
         </Box>
       </Box>
-      <Card>
+      <Card sx={{ borderRadius: "8px" }}>
         <List>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src={iconimg} />
             </ListItemAvatar>
-            <ListItemText primary="Manas" />
+            <ListItemText
+              primary="Manas"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Travis Howard" src={iconimg1} />
             </ListItemAvatar>
-            <ListItemText primary="Mohit" />
+            <ListItemText
+              primary="Mohit"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg2} />
             </ListItemAvatar>
-            <ListItemText primary="Manu" />
+            <ListItemText
+              primary="Manu"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg3} />
             </ListItemAvatar>
-            <ListItemText primary="Dhoni" />
+            <ListItemText
+              primary="Dhoni"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg4} />
             </ListItemAvatar>
-            <ListItemText primary="Sehwag" />
+            <ListItemText
+              primary="Sehwag"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg5} />
             </ListItemAvatar>
-            <ListItemText primary="Pandya" />
+            <ListItemText
+              primary="Pandya"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg6} />
             </ListItemAvatar>
-            <ListItemText primary="Rahul" />
+            <ListItemText
+              primary="Rahul"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Cindy Baker" src={iconimg7} />
             </ListItemAvatar>
-            <ListItemText primary="yuvraj" />
+            <ListItemText
+              primary="yuvraj"
+              sx={{
+                alignSelf: "center",
+                color: "#788292",
+                FontFamily: "Montserrat",
+              }}
+            />
           </ListItem>
         </List>
       </Card>

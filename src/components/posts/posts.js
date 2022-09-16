@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import mirandaimg from "../assets/miranda.png";
+
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -14,40 +14,41 @@ import ChatIcon from "@mui/icons-material/Chat";
 import ShareIcon from "@mui/icons-material/Share";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import iconimage from "../assets/Group48.png";
-import cardimg from "../assets/mirandaimg.png";
+import iconimage from "../../assets/Group48.png";
+import cardimg from "../../assets/mirandaimg.png";
+import mirandaimg from "../../assets/miranda.png";
 import { Badge, Box, InputAdornment } from "@mui/material";
-export default function Miranda() {
-  const [count, setCount] = React.useState(1);
+export default function Posts(props) {
+  const [count, setCount] = useState(1);
+  //const [post, setPost] = useState();
+
+  function createPost(post) {
+    alert(JSON.stringify(post, null, 2));
+    console.log(post, "postss");
+  }
+
   return (
     <Card sx={{ width: "100%", maxWidth: "100%", borderRadius: "8px" }}>
       <Box sx={{ display: "flex" }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              <img src={mirandaimg} />
+            <Avatar aria-label="recipe">
+              <img src={props.avatar} />
             </Avatar>
           }
-          // action={
-          //   <IconButton aria-label="settings">
-          //     <MoreHorizIcon />
-          //   </IconButton>
-          // }
-          // title="Miranda Shaffer"
-          // subheader="june 21,12:45"
         />
         <Box sx={{ alignSelf: "center", flexGrow: 1 }}>
           <Typography
             variant="h6"
             sx={{ fontSize: "15px", fontWeight: "bolder", color: "#203758" }}
           >
-            Miranada Shaffer
+            {props.name}
           </Typography>
           <Typography
             variant="body2"
             sx={{ fontSize: "15px", color: "#788292" }}
           >
-            june 21, 12:45pm
+            {props.time}
           </Typography>
         </Box>
         <IconButton aria-label="settings">
@@ -61,16 +62,15 @@ export default function Miranda() {
             fontFamily: "Montserrat",
             fontWeight: "400",
             color: "#203758",
-
             fontWeight: "bold",
           }}
         >
-          Having fun while cooking and eating variety of foods with @Sarah
+          {props.text}
         </Typography>
         <CardMedia
           component="img"
           height="194"
-          image={cardimg}
+          image={props.url}
           alt="Paella dish"
         />
       </CardContent>

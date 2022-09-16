@@ -9,43 +9,55 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import ChatIcon from "@mui/icons-material/Chat";
 import ShareIcon from "@mui/icons-material/Share";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import iconimage from "../assets/Group48.png";
 import { Badge, Box, Button, ButtonGroup } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 export default function ThomasBen() {
   const [count, setCount] = React.useState(1);
   return (
-    <Card sx={{ width: "100%", maxWidth: "100%" }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            <img src={iconimage} />
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Thomas Ben"
-        subheader="45 min ago"
-      />
-      {/* <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      /> */}
+    <Card sx={{ width: "100%", maxWidth: "100%", borderRadius: "8px" }}>
+      <Box sx={{ display: "flex" }}>
+        <CardHeader
+        // avatar={
+
+        // }
+        />
+        <Box mt={2} mr={2}>
+          <Avatar
+            sx={{ bgcolor: red[500] }}
+            aria-label="recipe"
+            src={iconimage}
+          />
+        </Box>
+
+        <Box sx={{ alignSelf: "center", flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{ fontSize: "15px", fontWeight: "bolder", color: "#203758" }}
+          >
+            Thomas ben
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ fontSize: "15px", color: "#788292" }}
+          >
+            45 min ago
+          </Typography>
+        </Box>
+        <IconButton aria-label="settings">
+          <MoreHorizIcon />
+        </IconButton>
+      </Box>
+
       <CardContent>
         <Typography
-          variant="h5"
+          variant="h6"
           sx={{
-            fontWeight: "400",
-
-            lineHeight: "187.4%",
+            fontFamily: "Montserrat",
+            fontWeight: "bold",
             color: "#203758",
           }}
         >
@@ -54,24 +66,25 @@ export default function ThomasBen() {
         </Typography>
       </CardContent>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <CardActions disableSpacing>
+        <CardActions disableSpacing sx={{ gap: "20px" }}>
           {/* <IconButton aria-label="share">
             <ThumbUpIcon />
           </IconButton> */}
 
           <Badge color="primary" badgeContent={count}>
             <ThumbUpIcon
-              sx={{ color: "gray" }}
+              sx={{ color: "#788292" }}
               onClick={() => {
                 setCount(count + 1);
               }}
             />
           </Badge>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
+          <Badge color="primary" badgeContent={4}>
+            <ChatIcon sx={{ color: "#788292" }} />
+          </Badge>
+
           <IconButton aria-label="share">
-            <ShareIcon />
+            <ShareIcon sx={{ color: "#788292" }} />
           </IconButton>
         </CardActions>
       </Box>

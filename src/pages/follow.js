@@ -8,23 +8,29 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { Box, Button } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import followimg from "../assets/followimg.png";
+import followimg2 from "../assets/followimg1.png";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 export default function WhoToFollow() {
   return (
     <>
-      <Box sx={{ marginTop: "20px", padding: "10px" }}>
-        <Box>
+      <Box sx={{ marginTop: "20px", padding: "10px", borderRadius: "8px" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6" sx={{ color: "#203758" }}>
             Who To Follow
           </Typography>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <MoreHorizIcon sx={{ color: "#788292" }} />
+          </Box>
         </Box>
         <List
           sx={{ width: "100%", bgcolor: "background.paper", marginTop: "10px" }}
         >
-          <ListItem alignItems="flex-start">
+          <ListItem alignItems="flex-start" sx={{ flexWrap: "wrap" }}>
             <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              <Avatar alt="Remy Sharp" src={followimg2} />
             </ListItemAvatar>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", alignSelf: "center" }}>
               <ListItemText
                 secondary={
                   <Typography
@@ -32,6 +38,7 @@ export default function WhoToFollow() {
                       justifyContent: "center",
                       alignItems: "center",
                       color: "#788292",
+                      alignSelf: "center",
                     }}
                     component="span"
                     variant="h6"
@@ -41,25 +48,35 @@ export default function WhoToFollow() {
                 }
               />
             </Box>
-            <Box sx={{ alignSelf: "center", display: "flex", flexGrow: 1 }}>
-              <CheckCircleIcon sx={{ color: "blue" }} />
+            <Box
+              sx={{
+                alignSelf: "center",
+                display: "flex",
+                flexGrow: 1,
+              }}
+            >
+              <CheckCircleIcon sx={{ color: "#788292" }} />
             </Box>
             <Box sx={{ alignSelf: "center" }}>
               <Button
                 variant="contained"
                 size="small"
-                sx={{ backgroundColor: "#F0F7FF", color: "#1877F2" }}
+                sx={{
+                  backgroundColor: "#F0F7FF",
+                  color: "#1877F2",
+                  fontWeight: "bold",
+                }}
               >
                 Follow
               </Button>
             </Box>
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <ListItem alignItems="flex-start" sx={{ flexWrap: "wrap" }}>
             <ListItemAvatar>
-              <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+              <Avatar alt="Travis Howard" src={followimg} />
             </ListItemAvatar>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", alignSelf: "center" }}>
               <ListItemText
                 secondary={
                   <Typography
@@ -75,8 +92,14 @@ export default function WhoToFollow() {
                 }
               />
             </Box>
-            <Box sx={{ alignSelf: "center", display: "flex", flexGrow: 1 }}>
-              <CheckCircleIcon sx={{ color: "blue" }} />
+            <Box
+              sx={{
+                alignSelf: "center",
+                display: "flex",
+                flexGrow: 1,
+              }}
+            >
+              <CheckCircleIcon sx={{ color: "#788292" }} />
             </Box>
             <Box sx={{ alignSelf: "center" }}>
               <Button
@@ -85,6 +108,7 @@ export default function WhoToFollow() {
                   alignSelf: "center",
                   backgroundColor: "#F0F7FF",
                   color: "#1877F2",
+                  fontWeight: "bold",
                 }}
                 variant="contained"
                 size="small"

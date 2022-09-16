@@ -37,7 +37,7 @@ export default function WatchingPeople() {
         }}
       >
         <CardContent>
-          <FavoriteIcon />
+          <FavoriteIcon sx={{ color: "white" }} />
           <Typography variant="body2" color="white" sx={{ paddingTop: "35px" }}>
             Start Watching With Friends & Family
           </Typography>
