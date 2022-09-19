@@ -18,10 +18,12 @@ import iconimage from "../../assets/Group48.png";
 import cardimg from "../../assets/mirandaimg.png";
 import mirandaimg from "../../assets/miranda.png";
 import { Badge, Box, InputAdornment } from "@mui/material";
+import { useUploadPost } from "../firebaseFunc/useposts";
 export default function Posts(props) {
   const [count, setCount] = useState(1);
   //const [post, setPost] = useState();
 
+  const { uploadPost, isLoading, isSuccess } = useUploadPost();
   function createPost(post) {
     alert(JSON.stringify(post, null, 2));
     console.log(post, "postss");
@@ -69,9 +71,9 @@ export default function Posts(props) {
         </Typography>
         <CardMedia
           component="img"
-          height="194"
+          //height="194"
           image={props.url}
-          alt="Paella dish"
+          //alt=""
         />
       </CardContent>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>

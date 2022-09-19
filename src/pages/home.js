@@ -31,15 +31,17 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 const Home = () => {
   const dummyPosts = [
     {
-      src: "https://i.pinimg.com/474x/bf/d3/20/bfd3202d81bf94f1d06bcb286cc6226d--th-century-trendy.jpg",
-      username: "Thomas Ben",
-      timestamp: "45 mins ago",
+      avatar:
+        "https://i.pinimg.com/474x/bf/d3/20/bfd3202d81bf94f1d06bcb286cc6226d--th-century-trendy.jpg",
+      name: "Thomas Ben",
+      time: "45 mins ago",
       text: "Being a father is sometimes my hardest but always my most rewarding",
     },
     {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqNOOlK1npnK7bA4GzDgkQuBRVeqwDwia20Q&usqp=CAU",
-      username: "Miranda Shaffer",
-      timestamp: "June 21, 12:45 pm",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqNOOlK1npnK7bA4GzDgkQuBRVeqwDwia20Q&usqp=CAU",
+      name: "Miranda Shaffer",
+      time: "June 21, 12:45 pm",
       component: "img",
       url: "https://eatdrinkflash.co.uk/wp-content/uploads/2021/06/DSC00807-scaled.jpg",
 
@@ -156,7 +158,14 @@ const Home = () => {
                       padding: "5px",
                     }}
                   >
-                    <Posts key={index} url={item.url} text={item.text} />{" "}
+                    <Posts
+                      key={index}
+                      url={item.url}
+                      text={item.text}
+                      avatar={item.avatar}
+                      name={item.name}
+                      time={item.time}
+                    />{" "}
                   </Box>
                 ))}
               </Box>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
@@ -9,13 +9,19 @@ import {
   Modal,
   Typography,
 } from "@mui/material";
+import { useUploadPost } from "../components/firebaseFunc/useposts";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
 import { Form, Formik } from "formik";
 export default function FullWidthTextField(props) {
+  const [image, setImage] = useState(null);
+  const [postText, setPostText] = useState("");
+
   // const [open, setOpen] = React.useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
+  const { uploadPost, isLoading, isSuccess } = useUploadPost();
+
   return (
     <>
       <Formik
@@ -52,23 +58,17 @@ export default function FullWidthTextField(props) {
               <Box sx={{ display: "flex", backgroundColor: "white" }}>
                 <TextField
                   fullWidth
-                  onChange={props.handleChange}
+                  //onChange={props.handleChange}
+                  onChange={(e) => setPostText(e.target.value)}
                   name="text"
                   id="fullWidth"
                   placeholder="whats on your mind paul?"
-                  // InputProps={{
-                  //   endAdornment: (
-                  //     <InputAdornment position="End">
-                  //       <Button>
-                  //         <ArrowUpwardIcon />
-                  //       </Button>
-                  //     </InputAdornment>
-                  //   ),
-                  // }}
                 />
                 <Box>
                   <TextField
-                    onChange={props.handleChange}
+                    // onChange={(e) =>
+                    //   props.setFieldValue("files", e.target.files[0])
+                    // }
                     name="url"
                     fullWidth
                     sx={{
@@ -78,6 +78,8 @@ export default function FullWidthTextField(props) {
                       fontSize: "15px",
                     }}
                     id="fullWidth"
+                    onChange={(e) => setImage(e.target.files[0])}
+                    //onChange={getFile}
                     placeholder="add Image/Status"
                     InputProps={{
                       endAdornment: (
@@ -91,38 +93,18 @@ export default function FullWidthTextField(props) {
                     }}
                   />
                 </Box>
-                <Button type="submit">add Item</Button>
+                <Button
+                  type="submit"
+                  onClick={() =>
+                    uploadPost({
+                      uploadFile: image,
+                      content: postText,
+                    })
+                  }
+                >
+                  add Item
+                </Button>
               </Box>
-              {/* <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          
-
-          <TextField
-            id="filled-basic"
-            label="Activity/Status"
-            variant="filled"
-            size="smalls"
-          />
-          <input type={"file"} />
-        </Box>
-      </Modal> */}
             </Box>
           </Form>
         )}
